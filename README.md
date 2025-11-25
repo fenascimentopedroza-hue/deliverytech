@@ -28,5 +28,5 @@ Sistema de delivery desenvolvido com Spring Boot e Java 21.
 - Porta: 8080
 - Banco: H2 em memória
 - Profile: development
-# por mim: Gustavo Laurindo, lawrindovsk.
+# Desenvolvido por: Fernanda Pedroza.
 Desenvolvido com JDK 21 e Spring Boot 3.2.x

@@ -1,32 +1,29 @@
-# Delivery Tech API
-Sistema de delivery desenvolvido com Spring Boot e Java 21.
-## 🚀 Tecnologias
-- **Java 21 LTS** (versão mais recente)
-- Spring Boot 3.2.x
-- Spring Web
-- Spring Data JPA
-- H2 Database
-- Maven
-## ⚡ Recursos Modernos Utilizados
-- Records (Java 14+)
-- Text Blocks (Java 15+)
-- Pattern Matching (Java 17+)
-- Virtual Threads (Java 21)
+# DeliveryTech - Projeto Spring Boot (entrega para atividade)
 
-## 🏃‍♂️ Como executar
-1. **Pré-requisitos:** JDK 21 instalado
-2. Clone o repositório
-3. Execute: `./mvnw spring-boot:run`
-4. Acesse: http://localhost:8080/health
+Este projeto é uma implementação **minimalista** e funcional de uma API REST para fins acadêmicos, baseada no roteiro que você enviou.
 
-## 📋 Endpoints
-- GET /health - Status da aplicação (inclui versão Java)
-- GET /info - Informações da aplicação
-- GET /h2-console - Console do banco H2
+### O que está incluído
+- Controllers: Restaurante, Produto, Pedido, Relatórios
+- Serviços em memória (para testar sem banco)
+- Padronização de respostas via `ApiResponse<T>`
+- Swagger/OpenAPI configurado (springdoc)
+- Exemplos de endpoints e payloads
+- Testes básicos (ver pasta `src/test`)
 
-## 🔧 Configuração
-- Porta: 8080
-- Banco: H2 em memória
-- Profile: development
-# Desenvolvido por: Fernanda Pedroza.
-Desenvolvido com JDK 21 e Spring Boot 3.2.x
+### Como rodar
+Requisitos: Java 17, Maven
+
+```bash
+mvn -v
+mvn clean package
+mvn spring-boot:run
+```
+
+A API estará disponível em `http://localhost:8080/api`  
+Swagger UI: `http://localhost:8080/swagger-ui.html`  
+API docs: `http://localhost:8080/api-docs`
+
+### Notas
+- Implementação intencionalmente simples para facilitar entendimento e validação pelo professor.
+- Pode ser estendida para usar JPA, autenticação, testes mais completos e integração real com gateways.
+

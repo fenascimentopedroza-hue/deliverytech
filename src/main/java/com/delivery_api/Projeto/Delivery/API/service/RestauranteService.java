@@ -1,0 +1,37 @@
+package com.delivery_api.Projeto.Delivery.API.service;
+
+import com.delivery_api.Projeto.Delivery.API.entity.Restaurante;
+import com.delivery_api.Projeto.Delivery.API.repository.RestauranteRepository;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class RestauranteService {
+
+    private final RestauranteRepository restauranteRepository;
+
+    public RestauranteService(RestauranteRepository restauranteRepository){
+        this.restauranteRepository = restauranteRepository;
+    }
+
+    public List<Restaurante> listarTodos() {
+        return restauranteRepository.findAll();
+    }
+
+    public Restaurante salvar(Restaurante restaurante){
+        if (restaurante.getTaxaEntrega() == null ){
+            throw new RuntimeException("Taxa de entrega é obrigatória");
+        }
+        return restauranteRepository.save(restaurante);
+    }
+    public Restaurante buscarPorId(Long id) {
+        return restauranteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Restaurante não encontrado!"));
+    }
+
+    public List<Restaurante> buscarPorCategoria(String categoria) {
+
+        return restauranteRepository.findByCategoria(categoria);
+    }
+
+}
